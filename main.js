@@ -8,7 +8,7 @@ const scene = new THREE.Scene();
 
 // Load the .glb model
 const loader = new GLTFLoader();
-loader.load('glb\table.glb', (gltf) => {
+loader.load('glb/table.glb', (gltf) => {
     scene.add(gltf.scene);
 });
 
