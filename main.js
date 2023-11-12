@@ -1,7 +1,7 @@
 // main.js
 
 // Set up Three.js scene
-import * as THREE from './three.module.js';
+import * as THREE from './three.module.js'; // Adjust the path if needed
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -16,6 +16,7 @@ let table;
 loader.load('glb/table.glb', (gltf) => {
     table = gltf.scene;
     scene.add(table);
+    animate(); // Start the animation loop after the model is loaded
 });
 
 // Set up WebXR
@@ -77,4 +78,10 @@ function onWindowResize() {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
+}
+
+function animate() {
+    // Your animation/rendering logic goes here
+    renderer.render(scene, camera);
+    requestAnimationFrame(animate);
 }
