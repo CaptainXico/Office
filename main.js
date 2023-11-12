@@ -1,4 +1,4 @@
-// script.js
+// main.js
 
 // Set up Three.js scene
 const scene = new THREE.Scene();
