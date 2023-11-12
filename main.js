@@ -1,6 +1,8 @@
 // main.js
 
 // Set up Three.js scene
+import * as THREE from './three.module.js';
+
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer();
@@ -11,7 +13,7 @@ document.body.appendChild(renderer.domElement);
 const loader = new THREE.GLTFLoader();
 let table;
 
-loader.load('assets/table.glb', (gltf) => {
+loader.load('glb/table.glb', (gltf) => {
     table = gltf.scene;
     scene.add(table);
 });
