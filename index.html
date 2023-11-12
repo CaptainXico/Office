@@ -1,15 +1,29 @@
+<!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Virtual Office</title>
+    <!-- Import map for Three.js -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@r158/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@r158/examples/jsm/"
+            }
+        }
+    </script>
     <!-- Include Three.js and WebXR libraries -->
-    <script type="module" src="https://threejsfundamentals.org/threejs/resources/threejs/r158/build/three.module.js"></script>
-    <script type="module" src="https://threejsfundamentals.org/threejs/resources/threejs/r158/examples/js/webxr/xrcontroller.js"></script>
-    <script type="module" src="https://threejsfundamentals.org/threejs/resources/threejs/r158/examples/js/webxr/xrhand.js"></script>
+    <script type="module">
+        import * as THREE from 'three';
+        import 'three/addons/loaders/GLTFLoader.js';  // Add any additional modules you need
+    </script>
+    <script type="module" src="https://unpkg.com/three@r125/examples/jsm/webxr/XRController.js"></script>
+    <script type="module" src="https://unpkg.com/three@r125/examples/jsm/webxr/XRHandModelFactory.js"></script>
 </head>
 <body>
-    <script type="module" src="main.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
