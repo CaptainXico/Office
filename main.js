@@ -1,7 +1,6 @@
 // main.js
 
 // Set up Three.js scene. import GLTFLoader
-import * as THREE from '/three.module.js';
 import { GLTFLoader } from 'three';
 
 const scene = new THREE.Scene();
