@@ -7,11 +7,14 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-// Create a simple cube
-const geometry = new THREE.BoxGeometry();
-const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-const cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
+// Create a simple cube (replace with your GLB model)
+const loader = new THREE.GLTFLoader();
+let table;
+
+loader.load('assets/table.glb', (gltf) => {
+    table = gltf.scene;
+    scene.add(table);
+});
 
 // Set up WebXR
 const xrButton = new XRButton();
