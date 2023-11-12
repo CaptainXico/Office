@@ -10,7 +10,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 // Create a simple cube (replace with your GLB model)
-const loader = new THREE.GLTFLoader();
+const loader = new GLTFLoader();
 let table;
 
 loader.load('glb/table.glb', (gltf) => {
