@@ -1,7 +1,8 @@
 // main.js
 
-// Set up Three.js scene
-import * as THREE from './three.module.js'; // Adjust the path if needed
+// Set up Three.js scene. import GLTFLoader
+import * as THREE from './three.module.js';
+import { GLTFLoader } from 'three';
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -10,7 +11,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 // Create a simple cube (replace with your GLB model)
-const loader = new GLTFLoader();
+const loader = new THREE.GLTFLoader();
 let table;
 
 loader.load('glb/table.glb', (gltf) => {
